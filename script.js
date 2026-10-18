@@ -11,6 +11,22 @@ let totalItems = 10; // change this if you do more than 10 items
 
 async function getData() {
     // YOUR CODE HERE
+    const url = "https://meowfacts.herokuapp.com/?count=10";
+    try {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`Response status: ${response.status}`);
+        }
+        const result = await response.json();
+        console.log(result);
+        for (let i = 0; i < result.data.length; i++) {
+            const li = document.createElement("li");
+            li.textContent = result.data[i];
+            frame.appendChild(li);
+        }
+    } catch (error) {
+        console.error(error.message);
+    }
 
 }
 

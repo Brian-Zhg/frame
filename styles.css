@@ -76,6 +76,7 @@ html {
     box-shadow: 0 -1px 0 2px hsla(0, 0%, 0%, .03);
     list-style: none;
     position: absolute;
+    display: none;
 }
 
 /* Navigation dots */
@@ -148,8 +149,8 @@ html {
     user-select: none;
 }
 
-.frame li.active img {
+.frame li.active {
     opacity: 1;
-    visibility: visible;
+    display: block;
     z-index: 10;
 }
